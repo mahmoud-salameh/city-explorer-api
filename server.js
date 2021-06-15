@@ -15,6 +15,10 @@ class Forecast {
   }
 }
 
+app.get('/',
+  function (req, res) {
+    res.send('Hello World');
+  });
 
 app.get('/weather', (req, res) => {
   const newData = [];
