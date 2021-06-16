@@ -61,7 +61,15 @@ app.get('/movies',(req,res) => {
       const arrOfMovies = [];
       response.data.results.map(item => {
         let imageURL = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
-        let movieObject = new Movie(item.title, item.overview, item.vote_average, item.vote_count, imageURL, item.popularity, item.release_date);
+        let movieObject = new Movie(
+          item.title,
+          item.overview,
+          item.vote_average,
+          item.vote_count,
+          imageURL,
+          item.popularity,
+          item.release_date
+        );
         arrOfMovies.push(movieObject);
       });
       res.status(200).send(arrOfMovies);
